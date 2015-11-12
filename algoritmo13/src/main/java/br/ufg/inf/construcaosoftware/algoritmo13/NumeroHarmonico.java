@@ -10,11 +10,20 @@ package br.ufg.inf.construcaosoftware.algoritmo13;
  * @author Henrique
  */
 public class NumeroHarmonico {
-    public float NumeroHarmonico(int n){
+    
+    /**
+     * Gera um numero harmonica
+     * @param Numero que representa quantidade de vezes que vai executar soma
+     * @return numero harmonico.
+     */
+    public static double numeroHarmonico(double numero){
+        if (numero < 1) {
+            throw new IllegalArgumentException("Parametro tem que ser maior ou igual a 1.");
+        }
         int i = 2;
-        int s = 1;
+        double s = 1;
         
-        while(i <= n){
+        while(i <= numero){
             s = s + 1/i;
             i = i + 1;
         }

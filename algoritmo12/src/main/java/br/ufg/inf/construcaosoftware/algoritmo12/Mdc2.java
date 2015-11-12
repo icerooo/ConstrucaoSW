@@ -5,13 +5,21 @@
  */
 package br.ufg.inf.construcaosoftware.algoritmo12;
 
+
 /**
- *
- * @author Henrique
+ * Classe contendo método que calcula o máximo divisor comum entre os dois parametros fornencidos.
  */
-public class Mdc2{
+public class Mdc2 {
     
-    public int Mdc2(int a, int b){
+    /**Calcula o maximo divisor comum entre a e b.
+     * @param a valor inteiro
+     * @param b valor inteiro
+     * @return valor correspondente ao divisor comum entre a e b.
+     */
+    public static int mdc2(int a, int b){
+        if(a < b && b < 1){
+            throw new IllegalArgumentException("parametro a deve ser maior ou igual a b e parametro b deve ser maior que Zero.");
+        }
         
         while(a != b){
             if(a > b){
@@ -21,5 +29,7 @@ public class Mdc2{
             }
         }
         return a;
-    } 
-}
+       
+    }
+
+ } 

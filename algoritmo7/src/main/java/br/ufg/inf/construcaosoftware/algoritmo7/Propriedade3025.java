@@ -10,12 +10,22 @@ package br.ufg.inf.construcaosoftware.algoritmo7;
  * @author Henrique
  */
 public class Propriedade3025 {
-    public boolean Propriedade3025(int n){
-        int i = n/100;
-        int j = n % 100;
-        if((i + j)*2 == n){
+    
+    /**
+     * Verifica se o quadrado da soma 
+     * @param parametro a ser verificado
+     * @return verdadeiro se bater a propriedade, falso no caso contrario.
+     */
+    public static boolean propriedade3025(int parametro) {
+        if (parametro < 0 || parametro > 9999) {
+            throw new IllegalArgumentException("N deve sair maior ou igual a zero e menor ou igual a 9999");
+        }
+        
+        int primeiroValor = parametro / 100;
+        int segundoValor = parametro % 100;
+        if ((primeiroValor + segundoValor) * (primeiroValor + segundoValor) == parametro) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

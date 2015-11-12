@@ -9,15 +9,29 @@ package br.ufg.inf.construcaosoftware.algoritmo9;
  *
  * @author Henrique
  */
+
 public class Primo {
-    public boolean Primo(int n){
-        int i = 2;
-        while(i <= (n - 1)){
-            if((n % i) == 0){
+
+    /**
+     * Verifica se o número fornecido é primo.
+     * @param numero numero a ser verificado.
+     * @return true se é primo, false se nao for primo.
+     */
+    public static boolean primo(int numero) {
+        if (numero <= 1) {
+            throw new IllegalArgumentException("O parametro deve ser maior que 1.");
+        }
+        
+        int verificadora = 2;
+        
+        while (verificadora <= (numero - 1)) {
+            if (numero % verificadora == 0) {
                 return false;
             }
-            i = i + 1;
+            verificadora++;
         }
+        
         return true;
     }
 }
+

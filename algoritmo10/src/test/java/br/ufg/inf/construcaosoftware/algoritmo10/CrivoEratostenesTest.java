@@ -18,37 +18,24 @@ import static org.junit.Assert.*;
  */
 public class CrivoEratostenesTest {
     
-    public CrivoEratostenesTest() {
+    @Test
+    public void testCrivoEratostenesPrimo() {
+        int[] array = {1, 2, 0};
+        CrivoEratostenes.crivoEratostenes(array, 2);
+        assertEquals(0, array[2]);
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+    @Test
+    public void testCrivoEratostenesNaoPrimo() {
+        int[] array = {1, 2, 0, 0, 0, 0, 0};
+        CrivoEratostenes.crivoEratostenes(array, 6);
+        assertEquals(1, array[3]);
     }
 
-    /**
-     * Test of CrivoEratostenes method, of class CrivoEratostenes.
-     */
-    @Test
-    public void testCrivoEratostenes() {
-        System.out.println("CrivoEratostenes");
-        int[] A = null;
-        int n = 0;
-        CrivoEratostenes instance = new CrivoEratostenes();
-        instance.CrivoEratostenes(A, n);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+    @Test(expected = IllegalArgumentException.class)
+    public void testCalculaCrivoEratostenesIMenorQueDois() {
+        int[] array = null;
+        CrivoEratostenes.crivoEratostenes(array, 1);
     }
     
 }

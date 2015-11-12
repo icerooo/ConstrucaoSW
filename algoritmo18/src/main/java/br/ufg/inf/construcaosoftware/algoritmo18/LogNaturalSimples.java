@@ -5,20 +5,39 @@
  */
 package br.ufg.inf.construcaosoftware.algoritmo18;
 
+import br.ufg.inf.construcaosoftware.algoritmo16.Fatorial;
+import br.ufg.inf.construcaosoftware.algoritmo5.Potencia;
+
 /**
  *
  * @author Henrique
  */
 public class LogNaturalSimples {
-    public float LogNaturalSimples(int n, int k){
-        int i = 2;
-        float e = n + 1;
-        /*while(i <= k){
-            int p = Potencia(n,i);
-            int f = Fatorial(i);
+    /**.
+    * Calcula o logaritmo natural simples 
+     * @param n logaritmando, o numero do qual se deseja obter o logaritmo.
+     * @param k luantidade de termos da somatoria
+     * @return  O resultado do logaritmo.
+     */
+     
+    public static int logNaturalSimples(int n, int k) {
+        if (n < 1 || k < 2) {
+            throw new IllegalArgumentException("Parametros Informados Invalidos.");
+        }
+        
+        int contador = 2;
+        int e = n + 1;
+        int p;
+        int f;
+        while (contador <= k) {            
+            p = Potencia.potencia(n, contador);
+            f = Fatorial.fatorial(contador);
+
             e = e + p / f;
-            i++;
-        }*/
+            contador++;
+        }
+        
         return e;
     }
 }
+

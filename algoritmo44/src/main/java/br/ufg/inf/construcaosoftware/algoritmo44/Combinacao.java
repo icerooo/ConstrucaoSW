@@ -3,18 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package br.ufg.inf.construcaosoftware.algoritmo44;
+
 /**
  *
  * @author Henrique
  */
-public class Fatorial {
-    public int Fatorial(int n){
-        int i = 2;
-        int f = 1;
-        while(i <= n){
-            f = f * i;
-            i++;
-        }
-        return f;
+public class Combinacao {
+    public static void combinacao(){
+        
     }
 }

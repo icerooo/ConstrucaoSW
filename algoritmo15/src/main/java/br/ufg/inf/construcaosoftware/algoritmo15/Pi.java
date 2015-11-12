@@ -9,8 +9,16 @@ package br.ufg.inf.construcaosoftware.algoritmo15;
  *
  * @author Henrique
  */
-public class Pi {
-    public float Pi(int n){
+public class Pi{
+    /**Calcula Pi.
+     * @param N numero de pi
+     * @return valor de pi
+     */
+    public static float pi(int n){
+        if(n < 1){
+            throw new IllegalArgumentException();
+        }
+        
         int i = 1;
         int s = -1;
         int d = -1;

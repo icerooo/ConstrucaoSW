@@ -10,14 +10,27 @@ package br.ufg.inf.construcaosoftware.algoritmo4;
  * @author Henrique
  */
 public class Produto {
-   public static float produto(float a, float b){
-    int i = 1;
-    float s = 0;
     
-    while(i <= b){
-    s = s + a;
-    i++;
+    /**
+     * Calcula o produto.
+     * @param variavelUM Primeira variavel.
+     * @param variavelDois Segunda variavel.
+     * @return valor do produto. 
+     */
+    
+    public static float produto(float variavelUM, float variavelDois) {
+        if (variavelUM < 0 || variavelDois < 0) {
+            throw new IllegalArgumentException("Os parametros tem que ser maiores ou iguais a 0.");
+        }
+        
+        int contador = 1;
+        float somatorio = 0;
+        
+        while (contador <= variavelDois) {            
+            somatorio += variavelUM;
+            contador += 1;
+        }
+        
+        return somatorio;
     }
-    return s;
-   }
 }

@@ -18,38 +18,15 @@ import static org.junit.Assert.*;
  */
 public class PrimoTest {
     
-    public PrimoTest() {
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testNumeroMenorQueUm() {
+        Primo.primo(0);
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of Primo method, of class Primo.
-     */
     @Test
-    public void testPrimo() {
-        System.out.println("Primo");
-        int n = 0;
-        Primo instance = new Primo();
-        boolean expResult = false;
-        boolean result = instance.Primo(n);
-        //assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+    public void testNumero2() {
+        Primo.primo(2);
     }
     
 }
