@@ -16,21 +16,21 @@ public class RaizQuadrada {
      * @param i Indice.
      * @return  Raiz.
      */
-    public static double raizQuadrada(double n, int i) {
-        if (n <= 0) {
+    public static double raizQuadrada(double radicando, int index) {
+        if (radicando <= 0) {
             throw new IllegalArgumentException("O n deve ser maior que zero.");
         }
-        if (i < 0) {
+        if (index < 0) {
             throw new IllegalArgumentException("O indice deve ser maior ou igual a zero.");
         }
         
-        double r = 1;
+        double raiz = 1;
         
-        while (i >= 0) {
-            r = (r + n / r) / 2;
-            i--;
+        while (index >= 0) {
+            raiz = (raiz + radicando / raiz) / 2;
+            index--;
         }
         
-        return r;
+        return raiz;
     }
 }

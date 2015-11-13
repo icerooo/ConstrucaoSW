@@ -10,14 +10,27 @@ package br.ufg.inf.construcaosoftware.algoritmo33;
  * @author Henrique
  */
 public class Cpf {
-    /**
-     * Valida o CPF fornecido.
-     * @param cpf CPF a ser verificado.
-     * @return true se o CPF for valido, falso caso contrario.
+     /**
+     * Verifica se o CPF e valido atraves da comparacao.
+     * @param digitos vetor contendo um CPF. 
+     * @return true para CPF valido, false para CPF invalido.
      */
+    public static boolean cpf(int[] digitos) {
+        if (digitos.length != 11) {
+            throw new IllegalArgumentException("O vetor deve conter 11 digitos.");
+        }
 
-    public static void cpf(int[] d){
-        int sj= d[1] + 2*d[2] + 3*d[3] + 4*d[4] + 5*d[5] + 6*d[6] + 7*d[7] + 8*d[8] + 9*d[9];
-        int sk= d[2] + 2*d[3] + 3*d[4] + 4*d[5] + 5*d[6] + 6*d[7] + 7*d[8] + 8*d[9] + 9*d[910];
+        int somaVerificaoPrimaria = digitos[0] + 2 * digitos[1] + 3 * digitos[2]
+                + 4 * digitos[3] + 5 * digitos[4] + 6 * digitos[5]
+                + 7 * digitos[6] + 8 * digitos[7] + 9 * digitos[8];
+
+        int somaVerificaoSecundaria = digitos[1] + 2 * digitos[2] + 3 * digitos[3]
+                + 4 * digitos[4] + 5 * digitos[5] + 6 * digitos[6]
+                + 7 * digitos[7] + 8 * digitos[8] + 9 * digitos[9];
+
+        int verificaoPrimaria = (somaVerificaoPrimaria % 11) % 10;
+        int verificaoSecundaria = (somaVerificaoSecundaria % 11) % 10;
+
+        return verificaoPrimaria == digitos[9] && verificaoSecundaria == digitos[10];
     }
 }

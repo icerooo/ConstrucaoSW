@@ -10,7 +10,7 @@ package br.ufg.inf.construcaosoftware.algoritmo45;
  * @author Henrique
  */
 public class ImprimeArray {
-/**
+     /**
      * Metodo que imprime vetor.
      * @param array Array de elementos.
      * @param tamanhoVetor numero de elementos a serem impressos.
